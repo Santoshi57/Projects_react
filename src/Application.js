@@ -5,35 +5,30 @@ class Application extends Component {
 
     constructor(props){
         super(props);
-    }
-    componentWillMount(props, state){
 
+       this.state = {
+        count: 0
+       }
     }
-    componentDidMount(props,state){
-        console.log("Mounted with",props, state);
-    }
-    ComponentWillReceiveProps(props){
-
-    }
-    componentWillUpdate(props, state){
-        if(this.props.name!== props.name){
-            //do something
-        }
-    }
-    componentDidUpdate(props, state){
-        
-    }
-
-
-
+handleClick = () => {
+    this.setState({count: this.state.count+1});
+}
+componentDidUpdate(props, state){
+    console.log("Updated from", state, "to", this.state);
+}
 
 
 render(){
-    let name="Santoshi";
+    let {count}=this.state;
     return (
         <div>
-        <h1>Hello, World!!!</h1>
-        <span>This</span>
+        <h1>You clicked the buutton {count} times</h1>
+        <span>
+            <button onClick={( ) => this.HandleClick()}> Click Me</button>
+
+
+
+        </span>
 
         </div>
     );
