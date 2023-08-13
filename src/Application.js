@@ -7,14 +7,17 @@ class Application extends Component {
         super(props);
 
        this.state = {
-        count: 0
+        count: 0,
+        overTen: false
        }
     }
 handleClick = () => {
-    this.setState({count: this.state.count+1});
+    this.setState({count: this.state.count + 1});
 }
 componentDidUpdate(props, state){
-    console.log("Updated from", state, "to", this.state);
+    if(this.state.count> 10){
+        this.setState({overTen: true});
+    }
 }
 
 
