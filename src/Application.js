@@ -20,7 +20,12 @@ componentDidUpdate(props, state){
         this.setState({overTen: true});
     }
 }
-
+resetCount =(e) => {
+    this.setState({
+        count:0,
+        overTen: false
+    });
+}
 
 render(){
     let {count}=this.state;
@@ -29,6 +34,7 @@ render(){
         <h1> You clicked the button {count} times</h1>
       <HighScore 
         overTen={this.state.overTen}
+        onReset = {(e)=> this.resetCount(e)}
       />
 
       
