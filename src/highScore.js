@@ -12,7 +12,7 @@ class HighScore extends Component {
         )
     }else{
         return null;
-    }
+    } 
 }
 }
 export default HighScore;
